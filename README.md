@@ -1,0 +1,1 @@
+Developed a collaborative platform with both frontend and backend named MEDI WISE. This is a type of hospital management that we call smart hospital management.<br>

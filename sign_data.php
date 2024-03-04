@@ -1,0 +1,37 @@
+<?php
+    require 'dbconnect.php';
+    if(isset($_POST['firstname'])){
+        $user_firstname = $_POST['firstname'];
+    }
+    if(isset($_POST['lastname'])){
+        $user_lastname = $_POST['lastname'];
+    }
+    if(isset($_POST['username'])){
+        $user_username = $_POST['username'];
+    }
+    if(isset($_POST['phoneno'])){
+        $user_phoneno = $_POST['phoneno'];
+    }
+    if(isset($_POST['email'])){
+        $user_email = $_POST['email'];
+    }
+    if(isset($_POST['password'])){
+        $user_password = $_POST['password'];
+    }
+    
+    $sql = "insert into users values('$user_firstname','$user_lastname','$user_username','$user_phoneno','$user_email','".md5($user_password)."')";
+
+    if(mysqli_query($conn, $sql)){
+        echo '<script>';
+        echo 'alert("Registration Successful");';
+        echo 'window.location="login.php";';
+        echo '</script>';
+    }
+    else{
+        echo '<script>';
+        echo 'alert("Registration Unsuccessful");';
+        echo 'window.location="signup.php";';
+        echo '</script>';
+    }
+
+?>
